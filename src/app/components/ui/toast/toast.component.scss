@@ -1,0 +1,46 @@
+@import '~@riapacheco/yutes/colors.scss';
+%default-toast {
+  // You indicate a placeholder selected with a preceding '%'
+  position: absolute;
+  top: 0;
+  right: 0rem;
+  margin: 2rem;
+  display: inline-flex;
+  min-width: 260px;
+  min-height: 70px;
+  max-height: 70px;
+  box-shadow: 6px 6px 12px #00000040;
+
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 6px solid black;
+  padding: 1.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+// Default toast
+.toast-class {
+  @extend %default-toast; // You then add the styles to another selector with the @extend decorator
+}
+
+// Now we can make our state-specific classes
+
+// Success
+.success-toast {
+  @extend %default-toast;
+  border-left: 6px solid $success;
+}
+
+// Warning
+.warning-toast {
+  @extend %default-toast;
+  border-left: 6px solid $warning;
+}
+
+// Danger
+.danger-toast {
+  @extend %default-toast;
+  border-left: 6px solid $danger;
+}
